@@ -1,0 +1,21 @@
+{
+  "name": "jasmine-they",
+  "version": "0.1.0",
+  "description": "xunit-like test case support for jasmine",
+  "keywords": [
+    "jasmine"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/simoneb/jasmine-they.git"
+  },
+  "author": "Simone Busoli <simone.busoli@gmail.com>",
+  "scripts": {
+    "test": "jasmine-node spec examples --verbose"
+  },
+  "devDependencies": {
+    "jasmine-node": "~1.11.0",
+    "docco": "~0.6.2"
+  }
+}
