@@ -1,8 +1,3 @@
-var fs = require('fs'),
-    jasmine_they = fs.readFileSync(__dirname + '/../jasmine-they.js','utf-8');
-  
-eval(jasmine_they);
-
 describe('jasmine-they', function(){
   function then(fn){  
     describe('ex', function() {

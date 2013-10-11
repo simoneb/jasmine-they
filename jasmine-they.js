@@ -1,6 +1,8 @@
+var isCommonJS = typeof window == "undefined" && typeof exports == "object";
+
 // `they` is the entry function to `jasmine-they`.
 // Use it as you would use jasmine's `it`.
-function they(description, optionalArguments, callback){
+var they = function(description, optionalArguments, callback){
   // Javascript's `arguments` variable is not an array, we make it one
   // and at the same time remove the first argument, the description.
   var args = Array.prototype.slice.call(arguments, 1);
@@ -37,3 +39,5 @@ function they(description, optionalArguments, callback){
     }  
   });
 }
+
+if(isCommonJS) exports.they = they;
