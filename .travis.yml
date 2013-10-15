@@ -4,10 +4,6 @@ env:
   global: 
     secure: "GAng/8E7rAHXGAHwoKkVQlC2w5KF4w41RzrD2nNOKAtqdwTAL/74ZlOBWDeyp198NLGI3zoh8BRL1DEpFlL8gZMHNkh7uHNQVXCTo8gB4nST92pigAi49GKhtwA/pPWT9fma+aUrPiqIvjgELJdJe6O8/WAnxgzP6PzYbiGw2/k="
 
-branches:
-  only:
-    - master
-
 after_success:
   - git clone -b gh-pages https://github.com/simoneb/jasmine-they.git gh-pages
   - rm -rf gh-pages/*
