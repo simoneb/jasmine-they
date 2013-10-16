@@ -13,10 +13,12 @@
   },
   "author": "Simone Busoli <simone.busoli@gmail.com>",
   "scripts": {
-    "test": "./scripts/test.sh"
+    "test": "bash ./scripts/humans-run-this.sh"
   },
   "devDependencies": {
     "docco": "~0.6.2",
-    "karma": "~0.10.2"
+    "karma": "~0.10",
+    "karma-sauce-launcher": "~0.1.1",
+    "jasmine-node": "~1.11.0"
   }
 }

@@ -1,3 +1,5 @@
+var they = they || require(__dirname + '/../jasmine-they.js').they;
+
 // `jasmine-they` is a simple implementation of xunit-like test cases for `jasmine`.
 // Test cases are useful when you would like to run a test against multiple inputs.
 // ### *they*
@@ -5,7 +7,7 @@
 // That's pretty much all there is to it.
 
 // You describe your spec as you would normally do:
-describe('jasmine-they', function(){
+describe('jasmine-they example', function(){
   // `they` is the same as jasmine's `it`,
   // but it accepts arguments.
   // You can pass one argument, and it will be available in the callback function.

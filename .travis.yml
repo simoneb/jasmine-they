@@ -1,21 +1,18 @@
+---
+script: $TEST_COMMAND
 language: node_js
-
 env: 
-  global: 
-    secure: "GAng/8E7rAHXGAHwoKkVQlC2w5KF4w41RzrD2nNOKAtqdwTAL/74ZlOBWDeyp198NLGI3zoh8BRL1DEpFlL8gZMHNkh7uHNQVXCTo8gB4nST92pigAi49GKhtwA/pPWT9fma+aUrPiqIvjgELJdJe6O8/WAnxgzP6PzYbiGw2/k="
-
-after_success:
-  - git clone -b gh-pages https://github.com/simoneb/jasmine-they.git gh-pages
-  - rm -rf gh-pages/*
-  - docco -o gh-pages examples/* *.js
-  - cd gh-pages
-  - cp jasmine-they.example.html index.html
-  - git add -A
-  - git config --global user.email "simone.busoli@gmail.com"
-  - git config --global user.name "Travis-CI"
-  - git config push.default simple
-  - git config credential.helper "store --file=.git/credentials"
-  - echo "https://${GITHUB_TOKEN}:@github.com" > .git/credentials
-  - git commit -m "Travis build ${TRAVIS_BUILD_NUMBER} pushed to gh-pages"
-  - git push
-  - rm .git/credentials
+  global:
+    - TEST_COMMAND="bash ./scripts/travis-sauce.sh"
+    - secure: GAng/8E7rAHXGAHwoKkVQlC2w5KF4w41RzrD2nNOKAtqdwTAL/74ZlOBWDeyp198NLGI3zoh8BRL1DEpFlL8gZMHNkh7uHNQVXCTo8gB4nST92pigAi49GKhtwA/pPWT9fma+aUrPiqIvjgELJdJe6O8/WAnxgzP6PzYbiGw2/k=
+    - secure: b5FRZwUDpVTwvlv7itiQCYbQ4yjWWS+fzMIHfHWz9T9bC1y02cMxpNLkwLfTAhEYNW8rzcUQBrulxJ60/V+3KJ9DLMjiuZ7uT306V4eueD+td/1MaTeDECe2yCCCxfKsXeCNeOm8to8g5cJURsWPDjJcHM/W2Lr0Q5fXRXxLoiM=
+  matrix:
+    - TEST_COMMAND="jasmine-node . --matchall --verbose"
+    - JASMINE_BROWSER="firefox"           SAUCE_OS="Linux"     SAUCE_BROWSER_VERSION=''
+    - JASMINE_BROWSER="safari"            SAUCE_OS="OS X 10.8" SAUCE_BROWSER_VERSION=6
+    - JASMINE_BROWSER="safari"            SAUCE_OS="OS X 10.6" SAUCE_BROWSER_VERSION=5 
+    - JASMINE_BROWSER="internet explorer" SAUCE_OS="Windows 8" SAUCE_BROWSER_VERSION=10
+    - JASMINE_BROWSER="internet explorer" SAUCE_OS="Windows 7" SAUCE_BROWSER_VERSION=9
+    - JASMINE_BROWSER="internet explorer" SAUCE_OS="Windows 7" SAUCE_BROWSER_VERSION=8
+    - JASMINE_BROWSER="chrome"            SAUCE_OS="Linux"     SAUCE_BROWSER_VERSION=''
+    - TEST_COMMAND="bash ./scripts/travis-doc.sh"

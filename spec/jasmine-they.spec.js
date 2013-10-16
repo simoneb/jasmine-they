@@ -1,3 +1,5 @@
+var they = they || require(__dirname + '/../jasmine-they.js').they;
+
 describe('jasmine-they', function(){
   function then(fn){  
     describe('ex', function() {
