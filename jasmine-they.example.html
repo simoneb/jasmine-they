@@ -2,7 +2,7 @@
 
 <html>
 <head>
-  <title>jasmine-they-examples-spec.js</title>
+  <title>jasmine-they.example.js</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
   <link rel="stylesheet" media="all" href="docco.css" />
@@ -19,8 +19,8 @@
           <div id="jump_page">
             
               
-              <a class="source" href="jasmine-they-examples-spec.html">
-                jasmine-they-examples-spec.js
+              <a class="source" href="jasmine-they.example.html">
+                jasmine-they.example.js
               </a>
             
               
@@ -36,7 +36,7 @@
         
           <li id="title">
               <div class="annotation">
-                  <h1>jasmine-they-examples-spec.js</h1>
+                  <h1>jasmine-they.example.js</h1>
               </div>
           </li>
         
@@ -52,17 +52,12 @@
 Test cases are useful when you would like to run a test against multiple inputs.</p>
 <h3><em>they</em></h3>
 <p>Whereas jasmine uses <code>it</code> to describe tests, jasmine-they uses <code>they</code>.
-That&#39;s pretty much all the is to it.</p>
-<p>In this example we include the <code>jasmine-they</code> source into this file because we need it to run the tests under node.
-You would normally use <code>&lt;script&gt;</code> tags in your spec runner html file:</p>
-<pre><code> &lt;script src=&quot;jasmine-they.js&quot;&gt;&lt;/script&gt;</code></pre>
+That&#39;s pretty much all there is to it.</p>
+<p>You describe your spec as you would normally do:</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="keyword">var</span> fs = require(<span class="string">'fs'</span>),
-    jasmine_they = fs.readFileSync(__dirname + <span class="string">'/../jasmine-they.js'</span>,<span class="string">'utf-8'</span>);
-  
-eval(jasmine_they);</pre></div></div>
+            <div class="content"><div class='highlight'><pre>describe(<span class="string">'jasmine-they'</span>, <span class="keyword">function</span>(){</pre></div></div>
             
         </li>
         
@@ -72,21 +67,6 @@ eval(jasmine_they);</pre></div></div>
               
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
-              </div>
-              <p>You would describe your spec as you would normally do:</p>
-
-            </div>
-            
-            <div class="content"><div class='highlight'><pre>describe(<span class="string">'jasmine-they'</span>, <span class="keyword">function</span>(){</pre></div></div>
-            
-        </li>
-        
-        
-        <li id="section-3">
-            <div class="annotation">
-              
-              <div class="pilwrap ">
-                <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
               <p><code>they</code> is the same as jasmine&#39;s <code>it</code>,
 but it accepts arguments.
@@ -101,11 +81,11 @@ You can pass one argument, and it will be available in the callback function.</p
         </li>
         
         
-        <li id="section-4">
+        <li id="section-3">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-4">&#182;</a>
+                <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
               <p>Naturally you can pass multiple arguments.
 In this case the test will run once per argument, and <code>arg</code> will
@@ -120,11 +100,11 @@ have value <em>1</em> in the first run, and <em>2</em> in the second run.</p>
         </li>
         
         
-        <li id="section-5">
+        <li id="section-4">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-5">&#182;</a>
+                <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
               <p>You can also pass arrays as arguments, in this case the behavior
 is the same as in the previous example. 
@@ -139,11 +119,11 @@ One test execution for each item in the array.</p>
         </li>
         
         
-        <li id="section-6">
+        <li id="section-5">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-6">&#182;</a>
+                <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
               <p>This is especially useful if you have an existing array and you
 want to run a test for each item it contains.</p>
@@ -159,11 +139,11 @@ want to run a test for each item it contains.</p>
         </li>
         
         
-        <li id="section-7">
+        <li id="section-6">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-7">&#182;</a>
+                <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
               <p>Arrays are unwinded only if there is a single argument though,
 otherwise they are treated as genuine standalone arguments.</p>
