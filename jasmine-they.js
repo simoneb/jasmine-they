@@ -1,5 +1,3 @@
-var isCommonJS = typeof window == "undefined" && typeof exports == "object";
-
 // `they` is the entry function to `jasmine-they`.
 // Use it as you would use jasmine's `it`.
 var they = function(description, optionalArguments, callback){
@@ -40,4 +38,5 @@ var they = function(description, optionalArguments, callback){
   });
 }
 
-if(isCommonJS) exports.they = they;
+if(typeof window == "undefined" && typeof exports == "object") 
+  exports.they = they;

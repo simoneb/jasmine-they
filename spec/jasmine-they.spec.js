@@ -18,7 +18,7 @@ describe('jasmine-they', function(){
   });
   
   it('should not invoke body if no arguments', function(){
-    var fn = createSpy('fun');
+    var fn = jasmine.createSpy('fun');
     
     they('', fn);
     
@@ -28,7 +28,7 @@ describe('jasmine-they', function(){
   });
   
   it('should invoke body with one argument', function(){
-    var fn = createSpy('fun');
+    var fn = jasmine.createSpy('fun');
     
     they('', 1, fn);
     
@@ -38,7 +38,7 @@ describe('jasmine-they', function(){
   });
   
   it('should invoke body with two arguments', function(){
-    var fn = createSpy('fun');
+    var fn = jasmine.createSpy('fun');
 
     they('', 1, 2, fn);
     
@@ -49,7 +49,7 @@ describe('jasmine-they', function(){
   });
   
   it('should invoke body with elements of array if argument is array', function(){
-    var fn = createSpy('fun');
+    var fn = jasmine.createSpy('fun');
 
     they('', [1, 2], fn);
     
@@ -60,7 +60,7 @@ describe('jasmine-they', function(){
   });
   
   it('should invoke body with array themselves if arguments are multiple arrays', function(){
-    var fn = createSpy('fun');
+    var fn = jasmine.createSpy('fun');
 
     they('', [1, 2], [3, 4], fn);
     

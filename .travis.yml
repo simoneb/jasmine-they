@@ -9,7 +9,7 @@ after_success:
   - rm -rf gh-pages/*
   - docco -o gh-pages examples/* *.js
   - cd gh-pages
-  - cp jasmine-they-examples-spec.html index.html
+  - cp jasmine-they.example.html index.html
   - git add -A
   - git config --global user.email "simone.busoli@gmail.com"
   - git config --global user.name "Travis-CI"

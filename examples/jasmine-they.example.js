@@ -2,18 +2,9 @@
 // Test cases are useful when you would like to run a test against multiple inputs.
 // ### *they*
 // Whereas jasmine uses `it` to describe tests, jasmine-they uses `they`.
-// That's pretty much all the is to it.
+// That's pretty much all there is to it.
 
-// In this example we include the `jasmine-they` source into this file because we need it to run the tests under node.
-// You would normally use `<script>` tags in your spec runner html file:
-//     
-//      <script src="jasmine-they.js"></script>
-var fs = require('fs'),
-    jasmine_they = fs.readFileSync(__dirname + '/../jasmine-they.js','utf-8');
-  
-eval(jasmine_they);
-
-// You would describe your spec as you would normally do:
+// You describe your spec as you would normally do:
 describe('jasmine-they', function(){
   // `they` is the same as jasmine's `it`,
   // but it accepts arguments.

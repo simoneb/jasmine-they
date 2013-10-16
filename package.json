@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "xunit-like test case support for jasmine",
   "keywords": [
-    "jasmine"
+    "jasmine",
+    "testcase"
   ],
   "license": "MIT",
   "repository": {
@@ -12,10 +13,10 @@
   },
   "author": "Simone Busoli <simone.busoli@gmail.com>",
   "scripts": {
-    "test": "jasmine-node spec examples --verbose"
+    "test": "./scripts/test.sh"
   },
   "devDependencies": {
-    "jasmine-node": "~1.11.0",
-    "docco": "~0.6.2"
+    "docco": "~0.6.2",
+    "karma": "~0.10.2"
   }
 }
