@@ -49,11 +49,11 @@
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
               <p><code>they</code> is the entry function to <code>jasmine-they</code>.
-Use it as you would use jasmine&#39;s <code>it</code>.</p>
+Use it as you would use jasmine’s <code>it</code>.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="keyword">var</span> they = <span class="keyword">function</span>(description, optionalArguments, callback){</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> they = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(description, optionalArguments, callback)</span>{</span></pre></div></div>
             
         </li>
         
@@ -64,12 +64,12 @@ Use it as you would use jasmine&#39;s <code>it</code>.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p>Javascript&#39;s <code>arguments</code> variable is not an array, we make it one
+              <p>Javascript’s <code>arguments</code> variable is not an array, we make it one
 and at the same time remove the first argument, the description.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> args = Array.prototype.slice.call(arguments, <span class="number">1</span>);</pre></div></div>
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">var</span> args = <span class="hljs-built_in">Array</span>.prototype.slice.call(<span class="hljs-built_in">arguments</span>, <span class="hljs-number">1</span>);</pre></div></div>
             
         </li>
         
@@ -80,12 +80,12 @@ and at the same time remove the first argument, the description.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
-              <p>If there are no arguments left then we don&#39;t need to do anything.</p>
+              <p>If there are no arguments left then we don’t need to do anything.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="keyword">if</span>(args.length === <span class="number">0</span>)
-    <span class="keyword">return</span>;</pre></div></div>
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">if</span>(args.length === <span class="hljs-number">0</span>)
+    <span class="hljs-keyword">return</span>;</pre></div></div>
             
         </li>
         
@@ -100,7 +100,7 @@ and at the same time remove the first argument, the description.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> fun = args.pop();</pre></div></div>
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">var</span> fun = args.pop();</pre></div></div>
             
         </li>
         
@@ -115,8 +115,8 @@ and at the same time remove the first argument, the description.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="keyword">if</span>(<span class="keyword">typeof</span> fun !== <span class="string">'function'</span>)
-    <span class="keyword">return</span>;</pre></div></div>
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> fun !== <span class="hljs-string">'function'</span>)
+    <span class="hljs-keyword">return</span>;</pre></div></div>
             
         </li>
         
@@ -131,10 +131,10 @@ and at the same time remove the first argument, the description.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="keyword">if</span>(args.length === <span class="number">1</span> &amp;&amp; 
-     Object.prototype.toString.call(args[<span class="number">0</span>]) === 
-     Object.prototype.toString.call([]))
-    args = args[<span class="number">0</span>];</pre></div></div>
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">if</span>(args.length === <span class="hljs-number">1</span> &amp;&amp; 
+     <span class="hljs-built_in">Object</span>.prototype.toString.call(args[<span class="hljs-number">0</span>]) === 
+     <span class="hljs-built_in">Object</span>.prototype.toString.call([]))
+    args = args[<span class="hljs-number">0</span>];</pre></div></div>
             
         </li>
         
@@ -149,7 +149,7 @@ and at the same time remove the first argument, the description.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> cases = args.length === <span class="number">1</span> ? <span class="string">'case'</span> : <span class="string">'cases'</span>;</pre></div></div>
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">var</span> cases = args.length === <span class="hljs-number">1</span> ? <span class="hljs-string">'case'</span> : <span class="hljs-string">'cases'</span>;</pre></div></div>
             
         </li>
         
@@ -164,7 +164,7 @@ and at the same time remove the first argument, the description.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="keyword">return</span> describe(description + <span class="string">' ('</span> + args.length + <span class="string">' '</span> + cases + <span class="string">')'</span>, <span class="keyword">function</span>() {</pre></div></div>
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">return</span> describe(description + <span class="hljs-string">' ('</span> + args.length + <span class="hljs-string">' '</span> + cases + <span class="hljs-string">')'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span></pre></div></div>
             
         </li>
         
@@ -179,17 +179,17 @@ and at the same time remove the first argument, the description.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; args.length; i++) {
-      (<span class="keyword">function</span>(arg) {
-        it(description + <span class="string">' ('</span> + JSON.stringify(arg) + <span class="string">')'</span>, <span class="keyword">function</span>() { 
-          fun.call(<span class="keyword">this</span>, arg); 
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; args.length; i++) {
+      (<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(arg)</span> {</span>
+        it(description + <span class="hljs-string">' ('</span> + <span class="hljs-built_in">JSON</span>.stringify(arg) + <span class="hljs-string">')'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span> 
+          fun.call(<span class="hljs-keyword">this</span>, arg); 
         });
       })(args[i]);
     }  
   });
 }
 
-<span class="keyword">if</span>(<span class="keyword">typeof</span> window == <span class="string">"undefined"</span> &amp;&amp; <span class="keyword">typeof</span> exports == <span class="string">"object"</span>) 
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> window == <span class="hljs-string">"undefined"</span> &amp;&amp; <span class="hljs-keyword">typeof</span> exports == <span class="hljs-string">"object"</span>) 
   exports.they = they;</pre></div></div>
             
         </li>

@@ -51,7 +51,7 @@
               
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="keyword">var</span> they = they || require(__dirname + <span class="string">'/../jasmine-they.js'</span>).they;</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">var</span> they = they || <span class="hljs-built_in">require</span>(__dirname + <span class="hljs-string">'/../jasmine-they.js'</span>).they;</pre></div></div>
             
         </li>
         
@@ -64,14 +64,11 @@
               </div>
               <p><code>jasmine-they</code> is a simple implementation of xunit-like test cases for <code>jasmine</code>.
 Test cases are useful when you would like to run a test against multiple inputs.</p>
-<h3><em>they</em></h3>
+<h3 id="-they-"><em>they</em></h3>
 <p>Whereas jasmine uses <code>it</code> to describe tests, jasmine-they uses <code>they</code>.
-That&#39;s pretty much all there is to it.</p>
-<p>You describe your spec as you would normally do:</p>
+That’s pretty much all there is to it.</p>
 
             </div>
-            
-            <div class="content"><div class='highlight'><pre>describe(<span class="string">'jasmine-they example'</span>, <span class="keyword">function</span>(){</pre></div></div>
             
         </li>
         
@@ -82,15 +79,11 @@ That&#39;s pretty much all there is to it.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
-              <p><code>they</code> is the same as jasmine&#39;s <code>it</code>,
-but it accepts arguments.
-You can pass one argument, and it will be available in the callback function.</p>
+              <p>You describe your spec as you would normally do:</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  they(<span class="string">'accept one argument'</span>, <span class="number">1</span>, <span class="keyword">function</span>(arg){
-    expect(arg).toBe(<span class="number">1</span>);
-  });</pre></div></div>
+            <div class="content"><div class='highlight'><pre>describe(<span class="hljs-string">'jasmine-they example'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span></pre></div></div>
             
         </li>
         
@@ -101,14 +94,14 @@ You can pass one argument, and it will be available in the callback function.</p
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
-              <p>Naturally you can pass multiple arguments.
-In this case the test will run once per argument, and <code>arg</code> will
-have value <em>1</em> in the first run, and <em>2</em> in the second run.</p>
+              <p><code>they</code> is the same as jasmine’s <code>it</code>,
+but it accepts arguments.
+You can pass one argument, and it will be available in the callback function.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  they(<span class="string">'accept multiple arguments'</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="keyword">function</span>(arg){
-    expect(arg).toBeGreaterThan(<span class="number">0</span>);
+            <div class="content"><div class='highlight'><pre>  they(<span class="hljs-string">'accept one argument'</span>, <span class="hljs-number">1</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(arg)</span>{</span>
+    expect(arg).toBe(<span class="hljs-number">1</span>);
   });</pre></div></div>
             
         </li>
@@ -120,14 +113,14 @@ have value <em>1</em> in the first run, and <em>2</em> in the second run.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
-              <p>You can also pass arrays as arguments, in this case the behavior
-is the same as in the previous example. 
-One test execution for each item in the array.</p>
+              <p>Naturally you can pass multiple arguments.
+In this case the test will run once per argument, and <code>arg</code> will
+have value <em>1</em> in the first run, and <em>2</em> in the second run.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  they(<span class="string">'accept arrays as arguments'</span>, [<span class="number">1</span>, <span class="number">2</span>], <span class="keyword">function</span>(arg){
-    expect(arg).toBeGreaterThan(<span class="number">0</span>);
+            <div class="content"><div class='highlight'><pre>  they(<span class="hljs-string">'accept multiple arguments'</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(arg)</span>{</span>
+    expect(arg).toBeGreaterThan(<span class="hljs-number">0</span>);
   });</pre></div></div>
             
         </li>
@@ -139,15 +132,14 @@ One test execution for each item in the array.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
-              <p>This is especially useful if you have an existing array and you
-want to run a test for each item it contains.</p>
+              <p>You can also pass arrays as arguments, in this case the behavior
+is the same as in the previous example. 
+One test execution for each item in the array.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  <span class="keyword">var</span> matches = <span class="string">'the quick brown fox jumps over the lazy dog'</span>.match(<span class="regexp">/\w{4,}/g</span>);
-  
-  they(<span class="string">'accept array variables'</span>, matches, <span class="keyword">function</span>(match){
-    expect(match.length).toBeGreaterThan(<span class="number">3</span>);
+            <div class="content"><div class='highlight'><pre>  they(<span class="hljs-string">'accept arrays as arguments'</span>, [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(arg)</span>{</span>
+    expect(arg).toBeGreaterThan(<span class="hljs-number">0</span>);
   });</pre></div></div>
             
         </li>
@@ -159,13 +151,33 @@ want to run a test for each item it contains.</p>
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
+              <p>This is especially useful if you have an existing array and you
+want to run a test for each item it contains.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">var</span> matches = <span class="hljs-string">'the quick brown fox jumps over the lazy dog'</span>.match(<span class="hljs-regexp">/\w{4,}/g</span>);
+  
+  they(<span class="hljs-string">'accept array variables'</span>, matches, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(match)</span>{</span>
+    expect(match.length).toBeGreaterThan(<span class="hljs-number">3</span>);
+  });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
               <p>Arrays are unwinded only if there is a single argument though,
 otherwise they are treated as genuine standalone arguments.</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre>  they(<span class="string">'don\'t unwind multiple array arguments'</span>, [<span class="number">1</span>,<span class="number">2</span>], [<span class="number">3</span>,<span class="number">4</span>], <span class="keyword">function</span>(arg){
-    expect(arg.length).toBe(<span class="number">2</span>);
+            <div class="content"><div class='highlight'><pre>  they(<span class="hljs-string">'don\'t unwind multiple array arguments'</span>, [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>], [<span class="hljs-number">3</span>,<span class="hljs-number">4</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(arg)</span>{</span>
+    expect(arg.length).toBe(<span class="hljs-number">2</span>);
   });
 });</pre></div></div>
             
